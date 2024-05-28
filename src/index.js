@@ -8,7 +8,7 @@ dbConnect()
         console.log(`MONOGO CONNECTED AT INDEX AT PORT ${process.env.PORT || 8000}`);
     })
 
-    app.on((error) => {
+    app.on("error", (error) => {
         console.log("ERROR: ", error);
         throw error;
     })
