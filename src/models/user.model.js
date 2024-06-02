@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 
 const userSchema = new mongoose.Schema({
 
-    username: {
+    userName: {
         type: String,
         unique: true,
         lowercase: true,
@@ -39,7 +39,7 @@ const userSchema = new mongoose.Schema({
 
     watchHistory: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Video",
+        ref: "Video"
     }],
 
     password: {

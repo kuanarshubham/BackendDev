@@ -8,7 +8,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-export const uploadResult = async function (filePath) {
+const uploadResult = async  (filePath) => {
     try{
         if(!filePath) return null;
 
@@ -18,6 +18,7 @@ export const uploadResult = async function (filePath) {
 
         console.log("File uploaded sucessfully: ", responseUpload.url);
 
+        fs.unlinkSync(filePath);
         return responseUpload;
     }
     catch(err){
@@ -26,3 +27,5 @@ export const uploadResult = async function (filePath) {
     }
 
 }
+
+export {uploadResult};

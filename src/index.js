@@ -9,7 +9,7 @@ dbConnect()
     })
 
     app.on("error", (error) => {
-        console.log("ERROR: ", error);
+        console.log("ERROR on INDEX: ", error);
         throw error;
     })
 })
